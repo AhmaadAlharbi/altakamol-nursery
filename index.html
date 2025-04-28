@@ -1,0 +1,4433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حضانة التكامل ثنائية اللغة | Al-Takamul Bilingual Nursery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* Primary colors based on logo */
+        --primary-blue: #2c3e9b; /* Deep blue from logo */
+        --primary-blue-light: #4559c9;
+        --primary-blue-dark: #1e2b70;
+        --primary-orange: #ffa12d; /* Orange from logo pencils */
+        --primary-orange-light: #ffba5f;
+        --primary-orange-dark: #e58800;
+
+        /* Complementary colors that work with the logo palette */
+        --accent-yellow: #ffda7a;
+        --accent-sky: #6aadff;
+        --accent-green: #88d498;
+
+        /* Neutral colors */
+        --white: #ffffff;
+        --off-white: #f8f9ff;
+        --light-gray: #edf0ff;
+        --medium-gray: #d9def0;
+        --dark-gray: #566193;
+        --black: #2a2f4f;
+
+        /* UI properties */
+        --shadow-sm: 0 5px 10px rgba(44, 62, 155, 0.05);
+        --shadow-md: 0 8px 20px rgba(44, 62, 155, 0.08);
+        --shadow-lg: 0 15px 30px rgba(44, 62, 155, 0.1);
+        --shadow-focus: 0 0 0 4px rgba(44, 62, 155, 0.2);
+
+        --radius-sm: 8px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --radius-xl: 32px;
+        --radius-full: 9999px;
+
+        --transition-fast: 0.2s ease;
+        --transition-normal: 0.3s ease;
+        --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Tajawal", sans-serif;
+        background-color: var(--off-white);
+        color: var(--dark-gray);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: var(--primary-blue);
+        line-height: 1.3;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color var(--transition-normal);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+      }
+
+      section {
+        padding: 100px 0;
+        position: relative;
+      }
+
+      /* Playful Background Elements */
+      .bg-shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.15;
+        z-index: -1;
+      }
+
+      .shape-blue {
+        background-color: var(--primary-blue);
+      }
+
+      .shape-orange {
+        background-color: var(--primary-orange);
+      }
+
+      .shape-yellow {
+        background-color: var(--accent-yellow);
+      }
+
+      .shape-sky {
+        background-color: var(--accent-sky);
+      }
+
+      /* Playful Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 28px;
+        border-radius: var(--radius-full);
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all var(--transition-bounce);
+        border: none;
+        cursor: pointer;
+        outline: none;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateX(-100%);
+        transition: transform var(--transition-normal);
+      }
+
+      .btn:hover::before {
+        transform: translateX(0);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-blue);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-blue-dark);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-secondary {
+        background-color: var(--primary-orange);
+        color: var(--white);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--primary-orange-dark);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary-blue);
+        color: var(--primary-blue);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary-blue);
+        color: var(--white);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-icon {
+        margin-right: 8px;
+        margin-left: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Playful Navbar */
+      .header {
+        position: fixed;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: all var(--transition-normal);
+      }
+
+      .header-container {
+        background-color: var(--white);
+        border-radius: var(--radius-full);
+        padding: 0 20px;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-img {
+        height: 100px;
+        transition: transform var(--transition-bounce);
+      }
+
+      .logo-img:hover {
+        transform: scale(1.05);
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-list {
+        display: flex;
+        gap: 10px;
+        list-style: none;
+      }
+
+      .nav-link {
+        position: relative;
+        color: var(--dark-gray);
+        font-weight: 600;
+        padding: 8px 15px;
+        border-radius: var(--radius-full);
+        transition: all var(--transition-normal);
+      }
+
+      .nav-link:hover {
+        color: var(--primary-blue);
+        background-color: var(--light-gray);
+      }
+
+      .nav-link.active {
+        color: var(--white);
+        background-color: var(--primary-blue);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .language-switch {
+        display: flex;
+        align-items: center;
+        padding: 8px 15px;
+        background-color: var(--light-gray);
+        border-radius: var(--radius-full);
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--primary-blue);
+        transition: all var(--transition-normal);
+      }
+
+      .language-switch:hover {
+        background-color: var(--medium-gray);
+        transform: translateY(-3px);
+      }
+
+      .language-switch i {
+        margin-left: 8px;
+      }
+
+      .mobile-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 2000;
+      }
+
+      .mobile-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        border-radius: 3px;
+        background-color: var(--primary-blue);
+        transition: all var(--transition-normal);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 180px 0 120px;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--off-white);
+      }
+
+      .hero-bg-shape-1 {
+        width: 500px;
+        height: 500px;
+        top: -250px;
+        right: -200px;
+      }
+
+      .hero-bg-shape-2 {
+        width: 300px;
+        height: 300px;
+        bottom: -150px;
+        left: -100px;
+      }
+
+      .hero-container {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        position: relative;
+      }
+
+      .hero-content {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        background-color: var(--light-gray);
+        color: var(--primary-blue);
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .hero-badge i {
+        margin-left: 8px;
+        color: var(--primary-orange);
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 24px;
+        line-height: 1.2;
+        margin-top: 40px;
+      }
+
+      .hero-title span {
+        color: var(--primary-orange);
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-title span::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: var(--accent-yellow);
+        border-radius: var(--radius-sm);
+        z-index: -1;
+        opacity: 0.5;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--primary-orange);
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+
+      .hero-text {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        color: var(--dark-gray);
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .hero-image-wrapper {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transform: rotate(2deg);
+        transition: transform var(--transition-bounce);
+      }
+
+      .hero-image:hover {
+        transform: rotate(-1deg) scale(1.03);
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        vertical-align: middle;
+      }
+
+      .hero-image::before,
+      .hero-image::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        z-index: -1;
+        border-radius: var(--radius-full);
+      }
+
+      .hero-image::before {
+        top: -30px;
+        right: -30px;
+        background-color: var(--primary-orange);
+      }
+
+      .hero-image::after {
+        bottom: -30px;
+        left: -30px;
+        background-color: var(--primary-blue);
+      }
+
+      .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .floating-item {
+        position: absolute;
+        animation: float 6s infinite ease-in-out alternate;
+        opacity: 0.8;
+      }
+
+      .floating-item:nth-child(1) {
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .floating-item:nth-child(2) {
+        top: 60%;
+        left: 20%;
+        animation-delay: 1s;
+      }
+
+      .floating-item:nth-child(3) {
+        top: 30%;
+        right: 15%;
+        animation-delay: 2s;
+      }
+
+      .floating-item:nth-child(4) {
+        bottom: 20%;
+        right: 10%;
+        animation-delay: 3s;
+      }
+
+      .floating-shape {
+        width: 50px;
+        height: 90px;
+        background-color: var(--accent-sky);
+        border-radius: var(--radius-md);
+        transform: rotate(45deg);
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(20px) rotate(10deg);
+        }
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        background-color: var(--white);
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-md);
+        cursor: pointer;
+        animation: bounce 2s infinite;
+        z-index: 1;
+      }
+
+      .scroll-indicator i {
+        color: var(--primary-blue);
+        font-size: 1.2rem;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0) translateX(-50%);
+        }
+        40% {
+          transform: translateY(-20px) translateX(-50%);
+        }
+        60% {
+          transform: translateY(-10px) translateX(-50%);
+        }
+      }
+
+      /* Section Headers */
+      .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 60px;
+      }
+
+      .section-subtitle {
+        display: inline-block;
+        padding: 6px 16px;
+        background-color: var(--light-gray);
+        color: var(--primary-blue);
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title span {
+        color: var(--primary-orange);
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 6px;
+        background-color: var(--primary-orange);
+        bottom: -10px;
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: var(--radius-full);
+      }
+
+      .section-description {
+        font-size: 1.2rem;
+        color: var(--dark-gray);
+        max-width: 700px;
+        margin: 30px auto 0;
+      }
+
+      /* Features Section */
+      .features {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .features-bg-shape-1 {
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        right: -200px;
+      }
+
+      .features-bg-shape-2 {
+        width: 350px;
+        height: 350px;
+        bottom: -150px;
+        left: -150px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .feature-card {
+        background-color: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 40px 30px;
+        box-shadow: var(--shadow-md);
+        transition: all var(--transition-bounce);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-15px);
+        border-color: var(--medium-gray);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .feature-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        transition: height var(--transition-normal);
+      }
+
+      .feature-card:nth-child(odd)::after {
+        background-color: var(--primary-blue);
+      }
+
+      .feature-card:nth-child(even)::after {
+        background-color: var(--primary-orange);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: var(--radius-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+        transition: all var(--transition-bounce);
+        position: relative;
+      }
+
+      .feature-card:nth-child(odd) .feature-icon {
+        background-color: rgba(44, 62, 155, 0.1);
+        color: var(--primary-blue);
+      }
+
+      .feature-card:nth-child(even) .feature-icon {
+        background-color: rgba(255, 161, 45, 0.1);
+        color: var(--primary-orange);
+      }
+
+      .feature-card:hover .feature-icon {
+        transform: scale(1.1) rotate(-10deg);
+      }
+
+      .feature-icon i {
+        font-size: 2rem;
+      }
+
+      .feature-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        transition: all var(--transition-normal);
+      }
+
+      .feature-card:nth-child(odd) .feature-title {
+        color: var(--primary-blue);
+      }
+
+      .feature-card:nth-child(even) .feature-title {
+        color: var(--primary-orange);
+      }
+
+      .feature-description {
+        margin-bottom: 25px;
+        color: var(--dark-gray);
+        flex-grow: 1;
+      }
+
+      .feature-list {
+        list-style: none;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+      }
+
+      .feature-item-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: var(--radius-full);
+        margin-left: 10px;
+        flex-shrink: 0;
+      }
+
+      .feature-card:nth-child(odd) .feature-item-icon {
+        background-color: var(--primary-blue);
+        color: var(--white);
+      }
+
+      .feature-card:nth-child(even) .feature-item-icon {
+        background-color: var(--primary-orange);
+        color: var(--white);
+      }
+
+      .feature-item-icon i {
+        font-size: 0.8rem;
+      }
+
+      /* Programs Section */
+      .programs {
+        position: relative;
+        overflow: hidden;
+        background-color: var(--light-gray);
+      }
+
+      .programs-bg-shape-1 {
+        width: 450px;
+        height: 450px;
+        top: -200px;
+        left: -200px;
+      }
+
+      .programs-bg-shape-2 {
+        width: 350px;
+        height: 350px;
+        bottom: -150px;
+        right: -150px;
+      }
+
+      .programs-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .programs-tabs {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .program-tab {
+        background-color: var(--white);
+        border-radius: var(--radius-full);
+        padding: 12px 24px;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--dark-gray);
+        border: 2px solid transparent;
+        transition: all var(--transition-normal);
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .program-tab:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .program-tab-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: var(--radius-full);
+        background-color: var(--light-gray);
+        transition: all var(--transition-normal);
+      }
+
+      .program-tab:nth-child(odd) .program-tab-icon {
+        color: var(--primary-blue);
+      }
+
+      .program-tab:nth-child(even) .program-tab-icon {
+        color: var(--primary-orange);
+      }
+
+      .program-tab.active {
+        color: var(--white);
+      }
+
+      .program-tab.active:nth-child(odd) {
+        background-color: var(--primary-blue);
+        border-color: var(--primary-blue);
+      }
+
+      .program-tab.active:nth-child(even) {
+        background-color: var(--primary-orange);
+        border-color: var(--primary-orange);
+      }
+
+      .program-tab.active .program-tab-icon {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+      }
+
+      .program-content {
+        display: none;
+        background-color: var(--white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        transition: all var(--transition-normal);
+      }
+
+      .program-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .program-content-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px;
+      }
+
+      @media (min-width: 992px) {
+        .program-content-inner {
+          flex-direction: row;
+        }
+      }
+
+      .program-content-info {
+        flex: 1;
+      }
+
+      .program-content-header {
+        margin-bottom: 30px;
+      }
+
+      .program-content-header .program-age {
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .program-content:nth-child(odd) .program-age {
+        background-color: rgba(44, 62, 155, 0.1);
+        color: var(--primary-blue);
+      }
+
+      .program-content:nth-child(even) .program-age {
+        background-color: rgba(255, 161, 45, 0.1);
+        color: var(--primary-orange);
+      }
+
+      .program-content-title {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+
+      .program-content:nth-child(odd) .program-content-title {
+        color: var(--primary-blue);
+      }
+
+      .program-content:nth-child(even) .program-content-title {
+        color: var(--primary-orange);
+      }
+
+      .program-content-description {
+        color: var(--dark-gray);
+        margin-bottom: 30px;
+      }
+
+      .program-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .program-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .program-feature-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .program-content:nth-child(odd) .program-feature-icon {
+        background-color: rgba(44, 62, 155, 0.1);
+        color: var(--primary-blue);
+      }
+
+      .program-content:nth-child(even) .program-feature-icon {
+        background-color: rgba(255, 161, 45, 0.1);
+        color: var(--primary-orange);
+      }
+
+      .program-feature-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .program-content:nth-child(odd) .program-feature-text h4 {
+        color: var(--primary-blue);
+      }
+
+      .program-content:nth-child(even) .program-feature-text h4 {
+        color: var(--primary-orange);
+      }
+
+      .program-feature-text p {
+        font-size: 0.95rem;
+        color: var(--dark-gray);
+      }
+
+      .program-image {
+        flex: 1;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        position: relative;
+      }
+
+      .program-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .program-content:nth-child(odd) .program-image::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(44, 62, 155, 0.2),
+          transparent
+        );
+      }
+
+      .program-content:nth-child(even) .program-image::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 161, 45, 0.2),
+          transparent
+        );
+      }
+
+      .program-cta {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      /* Branches Section */
+      .branches {
+        position: relative;
+        overflow: hidden;
+        background-color: var(--white);
+      }
+
+      .branches-bg-shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+        right: -150px;
+      }
+
+      .branches-bg-shape-2 {
+        width: 350px;
+        height: 350px;
+        bottom: -150px;
+        left: -150px;
+      }
+
+      .branches-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .branches-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .branch-card {
+        background-color: var(--white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        transition: all var(--transition-bounce);
+        border: 2px solid transparent;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .branch-card:hover {
+        transform: translateY(-15px);
+        border-color: var(--medium-gray);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .branch-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .branch-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--transition-normal);
+      }
+
+      .branch-card:hover .branch-image img {
+        transform: scale(1.1);
+      }
+
+      .branch-info {
+        padding: 25px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .branch-name {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--primary-blue);
+        font-weight: 700;
+      }
+
+      .branch-detail {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .branch-detail-icon {
+        width: 30px;
+        height: 30px;
+        background-color: rgba(44, 62, 155, 0.1);
+        color: var(--primary-blue);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15px;
+        flex-shrink: 0;
+      }
+
+      .branch-detail-text {
+        color: var(--dark-gray);
+        font-size: 1rem;
+        flex: 1;
+      }
+
+      .branch-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+        margin-top: auto;
+      }
+
+      .btn-branch {
+        flex: 1;
+        padding: 10px 15px;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonials-bg-shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+        right: -150px;
+      }
+
+      .testimonials-bg-shape-2 {
+        width: 350px;
+        height: 350px;
+        bottom: -150px;
+        left: -150px;
+      }
+
+      .testimonials-wrapper {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .testimonials-container {
+        position: relative;
+        z-index: 1;
+        padding: 30px;
+      }
+
+      .testimonial-card {
+        background-color: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 30px;
+        box-shadow: var(--shadow-md);
+        position: relative;
+        transition: all var(--transition-bounce);
+        transform: rotate(-1deg);
+        border: 2px solid var(--medium-gray);
+      }
+
+      .testimonial-card:hover {
+        transform: rotate(1deg) translateY(-10px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .testimonial-quote {
+        position: relative;
+        padding: 20px 0;
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        color: var(--dark-gray);
+        line-height: 1.7;
+      }
+
+      .testimonial-quote::before,
+      .testimonial-quote::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+      }
+
+      .testimonial-quote::before {
+        top: -25px;
+        right: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232C3E9B' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M18.62 18h-5.24l2-4H13V6h8v7.24L18.62 18zm-2-2h.76L19 12.76V8h-4v4h3.62l-2 4zm-8 2H3.38l2-4H3V6h8v7.24L8.62 18zm-2-2h.76L9 12.76V8H5v4h3.62l-2 4z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.5;
+      }
+
+      .testimonial-quote::after {
+        bottom: 0;
+        left: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232C3E9B' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M18.62 18h-5.24l2-4H13V6h8v7.24L18.62 18zm-2-2h.76L19 12.76V8h-4v4h3.62l-2 4zm-8 2H3.38l2-4H3V6h8v7.24L8.62 18zm-2-2h.76L9 12.76V8H5v4h3.62l-2 4z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.5;
+        transform: rotate(180deg);
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .testimonial-author-avatar {
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        border-radius: var(--radius-full);
+        border: 3px solid var(--primary-blue);
+      }
+
+      .testimonial-author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-author-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: var(--primary-blue);
+      }
+
+      .testimonial-author-info p {
+        color: var(--primary-orange);
+        font-weight: 600;
+      }
+
+      .testimonial-controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .testimonial-nav {
+        width: 50px;
+        height: 50px;
+        border-radius: var(--radius-full);
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-md);
+        cursor: pointer;
+        transition: all var(--transition-normal);
+      }
+
+      .testimonial-nav:hover {
+        background-color: var(--primary-blue);
+        transform: translateY(-5px);
+      }
+
+      .testimonial-nav i {
+        color: var(--primary-blue);
+        transition: color var(--transition-normal);
+      }
+
+      .testimonial-nav:hover i {
+        color: var(--white);
+      }
+
+      .testimonial-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .testimonial-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: var(--radius-full);
+        background-color: var(--medium-gray);
+        cursor: pointer;
+        transition: all var(--transition-normal);
+      }
+
+      .testimonial-dot.active {
+        background-color: var(--primary-blue);
+        transform: scale(1.2);
+      }
+
+      /* Contact Section */
+      .contact {
+        position: relative;
+        overflow: hidden;
+        background-color: var(--light-gray);
+      }
+
+      .contact-bg-shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+        left: -150px;
+      }
+
+      .contact-bg-shape-2 {
+        width: 350px;
+        height: 350px;
+        bottom: -150px;
+        right: -150px;
+      }
+
+      .contact-container {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      @media (min-width: 992px) {
+        .contact-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .contact-form-wrapper {
+        background-color: var(--white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-form-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(
+          to right,
+          var(--primary-blue),
+          var(--primary-orange)
+        );
+      }
+
+      .contact-form-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: var(--primary-blue);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--dark-gray);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid var(--medium-gray);
+        border-radius: var(--radius-md);
+        font-family: "Tajawal", sans-serif;
+        font-size: 1rem;
+        transition: all var(--transition-normal);
+        background-color: var(--light-gray);
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+        box-shadow: var(--shadow-focus);
+      }
+
+      .form-control::placeholder {
+        color: var(--dark-gray);
+        opacity: 0.5;
+      }
+
+      .form-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232C3E9B' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: left 15px center;
+        padding-left: 40px;
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 576px) {
+        .form-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .form-grid .form-group.full {
+        grid-column: 1 / -1;
+      }
+
+      .form-submit {
+        display: inline-block;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        padding: 15px 30px;
+        border-radius: var(--radius-full);
+        border: none;
+        font-family: "Tajawal", sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all var(--transition-bounce);
+        margin-top: 20px;
+        box-shadow: var(--shadow-md);
+      }
+
+      .form-submit:hover {
+        background-color: var(--primary-blue-dark);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .contact-info {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-blue-dark)
+        );
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+        padding: 40px;
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-info-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.3;
+      }
+
+      .contact-info-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: var(--white);
+        position: relative;
+      }
+
+      .contact-info-text {
+        margin-bottom: 30px;
+        position: relative;
+        opacity: 0.9;
+      }
+
+      .contact-method {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 25px;
+        position: relative;
+      }
+
+      .contact-method-icon {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius-md);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .contact-method-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: var(--white);
+      }
+
+      .contact-method-content p,
+      .contact-method-content a {
+        color: rgba(255, 255, 255, 0.9);
+        transition: color var(--transition-normal);
+      }
+
+      .contact-method-content a:hover {
+        color: var(--primary-orange);
+      }
+
+      .contact-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 40px;
+        position: relative;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius-md);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all var(--transition-bounce);
+      }
+
+      .social-link:hover {
+        background-color: var(--primary-orange);
+        transform: translateY(-5px) rotate(10deg);
+      }
+
+      .social-link i {
+        color: var(--white);
+        transition: color var(--transition-normal);
+      }
+
+      .map-container {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        margin-top: 60px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .map-container img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--white);
+        padding: 80px 0 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-bg-shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -200px;
+        right: -200px;
+      }
+
+      .footer-bg-shape-2 {
+        width: 350px;
+        height: 350px;
+        bottom: -200px;
+        left: -150px;
+      }
+
+      .footer-container {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      @media (min-width: 576px) {
+        .footer-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .footer-container {
+          grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+      }
+
+      .footer-logo {
+        margin-bottom: 20px;
+      }
+
+      .footer-logo img {
+        height: 60px;
+      }
+
+      .footer-description {
+        margin-bottom: 25px;
+        max-width: 400px;
+        color: var(--dark-gray);
+      }
+
+      .footer-newsletter {
+        display: flex;
+        max-width: 400px;
+      }
+
+      .newsletter-input {
+        flex-grow: 1;
+        padding: 12px 20px;
+        border: 2px solid var(--medium-gray);
+        border-radius: var(--radius-full) 0 0 var(--radius-full);
+        font-family: "Tajawal", sans-serif;
+        background-color: var(--light-gray);
+        transition: all var(--transition-normal);
+      }
+
+      .newsletter-input:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+      }
+
+      .newsletter-btn {
+        background-color: var(--primary-blue);
+        color: var(--white);
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 var(--radius-full) var(--radius-full) 0;
+        cursor: pointer;
+        transition: all var(--transition-normal);
+      }
+
+      .newsletter-btn:hover {
+        background-color: var(--primary-orange);
+      }
+
+      .footer-title {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        color: var(--primary-blue);
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-title::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 4px;
+        background-color: var(--primary-orange);
+        bottom: 0;
+        right: 0;
+        border-radius: var(--radius-full);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-link {
+        margin-bottom: 12px;
+      }
+
+      .footer-link a {
+        color: var(--dark-gray);
+        transition: all var(--transition-normal);
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-link a:hover {
+        color: var(--primary-blue);
+        transform: translateX(-8px);
+      }
+
+      .footer-link a i {
+        margin-left: 8px;
+        color: var(--primary-orange);
+        font-size: 0.8rem;
+      }
+
+      .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .footer-contact-icon {
+        color: var(--primary-blue);
+        font-size: 1rem;
+        margin-top: 3px;
+      }
+
+      .footer-contact-text {
+        color: var(--dark-gray);
+      }
+
+      .footer-contact-text a {
+        color: var(--dark-gray);
+        transition: color var(--transition-normal);
+      }
+
+      .footer-contact-text a:hover {
+        color: var(--primary-blue);
+      }
+
+      .footer-bottom {
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 2px dashed var(--medium-gray);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .footer-copyright {
+        color: var(--dark-gray);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 10px;
+      }
+
+      .footer-social-link {
+        width: 40px;
+        height: 40px;
+        background-color: var(--light-gray);
+        border-radius: var(--radius-md);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all var(--transition-bounce);
+      }
+
+      .footer-social-link:hover {
+        background-color: var(--primary-blue);
+        transform: translateY(-5px) rotate(10deg);
+      }
+
+      .footer-social-link i {
+        color: var(--primary-blue);
+        transition: color var(--transition-normal);
+      }
+
+      .footer-social-link:hover i {
+        color: var(--white);
+      }
+
+      /* Floating Elements */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: var(--white);
+        border-radius: var(--radius-full);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--primary-blue);
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: var(--shadow-md);
+        transition: all var(--transition-bounce);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+      }
+
+      .scroll-to-top.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .scroll-to-top:hover {
+        background-color: var(--primary-blue);
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .scroll-to-top:hover i {
+        color: var(--white);
+      }
+
+      .scroll-to-top i {
+        font-size: 1.5rem;
+        transition: color var(--transition-normal);
+      }
+
+      .chat-bubble {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        display: flex;
+        align-items: center;
+        padding: 8px 8px 8px 20px;
+        background-color: var(--white);
+        border-radius: var(--radius-full);
+        box-shadow: var(--shadow-md);
+        cursor: pointer;
+        z-index: 100;
+        transition: all var(--transition-bounce);
+        transform: translateY(100px);
+        opacity: 0;
+      }
+
+      .chat-bubble.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .chat-bubble:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .chat-bubble-text {
+        font-weight: 600;
+        color: var(--primary-blue);
+        margin-right: 15px;
+      }
+
+      .chat-bubble-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-blue-light)
+        );
+        border-radius: var(--radius-full);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(44, 62, 155, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(44, 62, 155, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(44, 62, 155, 0);
+        }
+      }
+
+      .chat-bubble-icon i {
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+
+      /* Loader */
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      .loader-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .loader-logo {
+        margin-bottom: 30px;
+        animation: bounce 1.5s infinite alternate;
+        position: relative;
+        left: 160px;
+      }
+
+      .loader-progress {
+        width: 200px;
+        height: 6px;
+        background-color: var(--light-gray);
+        border-radius: var(--radius-full);
+        overflow: hidden;
+        margin: 0 auto;
+      }
+
+      .loader-progress-bar {
+        height: 100%;
+        border-radius: var(--radius-full);
+        background: linear-gradient(
+          to right,
+          var(--primary-blue),
+          var(--primary-orange)
+        );
+        background-size: 200% 100%;
+        animation: gradient 2s ease infinite;
+        width: 0;
+        transition: width 0.5s ease;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Modal */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(42, 47, 79, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+      }
+
+      .modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        background-color: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        max-width: 90%;
+        max-height: 90%;
+        transform: scale(0.9);
+        transition: transform var(--transition-bounce);
+      }
+
+      .modal.active .modal-content {
+        transform: scale(1);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--white);
+        border-radius: var(--radius-full);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1;
+        box-shadow: var(--shadow-md);
+        transition: all var(--transition-normal);
+      }
+
+      .modal-close:hover {
+        background-color: var(--primary-blue);
+        transform: rotate(90deg);
+      }
+
+      .modal-close i {
+        color: var(--primary-blue);
+        transition: color var(--transition-normal);
+      }
+
+      .modal-close:hover i {
+        color: var(--white);
+      }
+
+      .modal-image {
+        display: block;
+        max-width: 100%;
+        max-height: 80vh;
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .fade-in-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in-left.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .fade-in-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in-right.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .delay-1 {
+        transition-delay: 0.1s;
+      }
+
+      .delay-2 {
+        transition-delay: 0.2s;
+      }
+
+      .delay-3 {
+        transition-delay: 0.3s;
+      }
+
+      .delay-4 {
+        transition-delay: 0.4s;
+      }
+
+      .delay-5 {
+        transition-delay: 0.5s;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 1200px) {
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media screen and (max-width: 992px) {
+        section {
+          padding: 80px 0;
+        }
+
+        .hero {
+          padding: 160px 0 100px;
+        }
+
+        .hero-container {
+          flex-direction: column;
+        }
+
+        .hero-content,
+        .hero-image-wrapper {
+          width: 100%;
+        }
+
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header-container {
+          height: 70px;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: var(--white);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 100;
+          transition: all var(--transition-normal);
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .nav-menu.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .nav-list {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .mobile-toggle {
+          display: flex;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .hero-title {
+          font-size: 2.2rem;
+          margin-top: 25px;
+        }
+
+        .hero-subtitle {
+          font-size: 1.3rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .chat-bubble-text {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+      <div class="loader-content">
+        <img
+          src="./images/altakamol_logo.png"
+          alt="حضانة التكامل"
+          class="loader-logo"
+        />
+        <div class="loader-progress">
+          <div class="loader-progress-bar" id="loaderBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header-container">
+          <div class="logo">
+            <img
+              src="./images/altakamol_logo.png"
+              alt="حضانة التكامل"
+              class="logo-img"
+            />
+          </div>
+
+          <div class="nav-menu" id="navMenu">
+            <ul class="nav-list">
+              <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
+              <li><a href="#features" class="nav-link">مميزاتنا</a></li>
+              <li><a href="#programs" class="nav-link">البرامج</a></li>
+              <li><a href="#branches" class="nav-link">افرعنا</a></li>
+              <li><a href="#testimonials" class="nav-link">آراء الأهالي</a></li>
+              <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-actions">
+            <div class="language-switch">
+              <i class="fas fa-globe"></i>
+              <span>English</span>
+            </div>
+
+            <a href="#contact" class="btn btn-secondary">سجل طفلك الآن</a>
+
+            <div class="mobile-toggle" id="mobileToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="bg-shape hero-bg-shape-1 shape-blue"></div>
+      <div class="bg-shape hero-bg-shape-2 shape-orange"></div>
+
+      <div class="floating-elements">
+        <div class="floating-item">
+          <div
+            class="floating-shape"
+            style="
+              background-color: var(--primary-orange);
+              border-radius: var(--radius-full);
+            "
+          ></div>
+        </div>
+        <div class="floating-item">
+          <div
+            class="floating-shape"
+            style="
+              background-color: var(--accent-sky);
+              border-radius: var(--radius-md);
+            "
+          ></div>
+        </div>
+        <div class="floating-item"></div>
+        <div class="floating-item">
+          <div
+            class="floating-shape"
+            style="
+              background-color: var(--accent-yellow);
+              transform: rotate(45deg);
+            "
+          ></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-badge fade-in">
+              <i class="fas fa-star"></i>
+              <span>نبني جيل المستقبل</span>
+            </div>
+
+            <h1 class="hero-title fade-in delay-1">
+              حضانة التكامل <span>ثنائية اللغة</span>
+            </h1>
+
+            <h2 class="hero-subtitle fade-in delay-2">
+              بيئة تعليمية إبداعية لتنمية مهارات طفلك
+            </h2>
+
+            <p class="hero-text fade-in delay-3">
+              في حضانة التكامل، نقدم تجربة تعليمية فريدة تجمع بين اللغتين
+              العربية والإنجليزية، مع التركيز على المهارات الحياتية والإبداعية
+              التي يحتاجها طفلك للنجاح في المستقبل.
+            </p>
+
+            <div class="hero-cta fade-in delay-4">
+              <a href="#contact" class="btn btn-secondary">
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                سجل طفلك الآن
+              </a>
+              <a href="#features" class="btn btn-outline">تعرف علينا أكثر</a>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper fade-in delay-5">
+            <div class="hero-image">
+              <img src="./images/hero.jpg" alt="أطفال يتعلمون ويلعبون" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" id="heroScroll">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="bg-shape features-bg-shape-1 shape-orange"></div>
+      <div class="bg-shape features-bg-shape-2 shape-blue"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle fade-in">ما يميزنا</div>
+          <h2 class="section-title fade-in delay-1">
+            تجربة تعليمية <span>متكاملة</span>
+          </h2>
+          <p class="section-description fade-in delay-2">
+            نقدم بيئة تعليمية متميزة تهدف إلى تنمية مهارات طفلك بشكل شامل
+            بأساليب تعليمية مبتكرة ومرحة
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card fade-in-left delay-2">
+            <div class="feature-icon">
+              <i class="fas fa-language"></i>
+            </div>
+            <h3 class="feature-title">تعليم ثنائي اللغة</h3>
+            <p class="feature-description">
+              منهج متكامل يجمع بين اللغتين العربية والإنجليزية، مما يساعد
+              الأطفال على إتقان اللغتين بطلاقة منذ سن مبكرة.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>برنامج لغوي متوازن</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>معلمون متخصصون</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>أنشطة تفاعلية</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="feature-card fade-in delay-3">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="feature-title">تطوير المهارات</h3>
+            <p class="feature-description">
+              برامج مصممة خصيصاً لتطوير المهارات الحركية والإدراكية والاجتماعية
+              والعاطفية لدى الأطفال.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>ألعاب تعليمية متنوعة</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>أنشطة حركية يومية</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>أنشطة إبداعية</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="feature-card fade-in-right delay-4">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="feature-title">بيئة آمنة</h3>
+            <p class="feature-description">
+              نوفر بيئة آمنة ومريحة تمنح الأطفال الشعور بالأمان والثقة، مع مرافق
+              حديثة مصممة خصيصاً للأطفال.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>كاميرات مراقبة</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>فريق مدرب</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>معايير سلامة عالمية</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="feature-card fade-in-left delay-3">
+            <div class="feature-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3 class="feature-title">أنشطة إبداعية</h3>
+            <p class="feature-description">
+              نشجع الإبداع والابتكار من خلال مجموعة متنوعة من الأنشطة الفنية
+              والموسيقية والمسرحية.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>فنون وحرف يدوية</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>موسيقى ورقص</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>تمثيل وسرد قصص</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="feature-card fade-in delay-4">
+            <div class="feature-icon">
+              <i class="fas fa-apple-alt"></i>
+            </div>
+            <h3 class="feature-title">تغذية صحية</h3>
+            <p class="feature-description">
+              نقدم وجبات صحية ومتوازنة مُعدّة بعناية لتلبية احتياجات النمو لدى
+              الأطفال، مع مراعاة الحالات الخاصة.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>وجبات متوازنة</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>خيارات للحساسية</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>إشراف غذائي</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="feature-card fade-in-right delay-5">
+            <div class="feature-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3 class="feature-title">كادر متخصص</h3>
+            <p class="feature-description">
+              يضم فريقنا مجموعة من المعلمين والمشرفين المؤهلين ذوي الخبرة في
+              مجال التعليم المبكر.
+            </p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>معلمون مؤهلون</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>تدريب مستمر</span>
+              </li>
+              <li class="feature-item">
+                <div class="feature-item-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <span>نسبة معلم/طفل مثالية</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+      <div class="bg-shape programs-bg-shape-1 shape-sky"></div>
+      <div class="bg-shape programs-bg-shape-2 shape-orange"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle fade-in">البرامج التعليمية</div>
+          <h2 class="section-title fade-in delay-1">
+            برامج <span>تعليمية متميزة</span>
+          </h2>
+          <p class="section-description fade-in delay-2">
+            برامج متخصصة تناسب كل الفئات العمرية وتلبي احتياجات كل مرحلة نمو
+          </p>
+        </div>
+
+        <div class="programs-container">
+          <div class="programs-tabs fade-in delay-3">
+            <div class="program-tab active" data-program="infants">
+              <div class="program-tab-icon">
+                <i class="fas fa-baby"></i>
+              </div>
+              <span>برنامج الرضع</span>
+            </div>
+
+            <div class="program-tab" data-program="toddlers">
+              <div class="program-tab-icon">
+                <i class="fas fa-child"></i>
+              </div>
+              <span>برنامج الدارجين</span>
+            </div>
+
+            <div class="program-tab" data-program="juniors">
+              <div class="program-tab-icon">
+                <i class="fas fa-running"></i>
+              </div>
+              <span>برنامج الصغار</span>
+            </div>
+
+            <div class="program-tab" data-program="preschool">
+              <div class="program-tab-icon">
+                <i class="fas fa-book-reader"></i>
+              </div>
+              <span>برنامج التمهيدي</span>
+            </div>
+          </div>
+
+          <div class="program-content active" id="infants">
+            <div class="program-content-inner">
+              <div class="program-content-info">
+                <div class="program-content-header">
+                  <div class="program-age">الفئة العمرية: 3 - 12 شهر</div>
+                  <h3 class="program-content-title">برنامج الرضع</h3>
+                  <p class="program-content-description">
+                    يوفر برنامج الرضع بيئة دافئة وآمنة تلبي احتياجات الأطفال في
+                    مرحلة النمو المبكرة. يركز البرنامج على التحفيز الحسي والتطور
+                    العاطفي والبدني للطفل من خلال التفاعلات الشخصية واللعب
+                    الموجه.
+                  </p>
+                </div>
+
+                <div class="program-features">
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>رعاية شخصية</h4>
+                      <p>
+                        اهتمام فردي بكل طفل مع مراعاة احتياجاته الخاصة وجدوله
+                        الشخصي.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-music"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>تحفيز حسي</h4>
+                      <p>
+                        أنشطة صوتية ولمسية وبصرية متنوعة لتحفيز تطور الحواس.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-hands"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>تطوير حركي</h4>
+                      <p>
+                        أنشطة تدعم تطوير العضلات الكبيرة والدقيقة والتناسق
+                        الحركي.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>تطوير لغوي</h4>
+                      <p>الحديث والغناء والقراءة باللغتين لتعزيز تطور اللغة.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-image">
+                <img src="./images/infants.jpg" alt="برنامج الرضع" />
+              </div>
+            </div>
+          </div>
+
+          <div class="program-content" id="toddlers">
+            <div class="program-content-inner">
+              <div class="program-content-info">
+                <div class="program-content-header">
+                  <div class="program-age">الفئة العمرية: 1 - 2 سنة</div>
+                  <h3 class="program-content-title">برنامج الدارجين</h3>
+                  <p class="program-content-description">
+                    برنامج الدارجين مصمم لتلبية احتياجات الأطفال الصغار
+                    المتحركين والفضوليين. يوفر البرنامج بيئة استكشافية آمنة تشجع
+                    الاستقلالية وتنمية المهارات الأساسية من خلال اللعب الموجه
+                    والأنشطة التفاعلية.
+                  </p>
+                </div>
+
+                <div class="program-features">
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>تطوير حركي</h4>
+                      <p>
+                        أنشطة وألعاب لتقوية المهارات الحركية والتوازن والتناسق
+                        الحركي.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-music"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>تحفيز حسي</h4>
+                      <p>
+                        أنشطة صوتية ولمسية وبصرية متنوعة لتحفيز تطور الحواس.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-hands"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>التفكير والاستكشاف</h4>
+                      <p>
+                        ألعاب تركيب وفك وتصنيف لتنمية مهارات التفكير المنطقي.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>مهارات لغوية</h4>
+                      <p>
+                        أنشطة قصصية وغنائية تشجع على توسيع المفردات واكتساب
+                        اللغة.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-image">
+                <img src="./images/toddlers.jpg" alt="برنامج الرضع" />
+              </div>
+            </div>
+          </div>
+
+          <div class="program-content" id="juniors">
+            <div class="program-content-inner">
+              <div class="program-content-info">
+                <div class="program-content-header">
+                  <div class="program-age">الفئة العمرية: 2 - 3 سنة</div>
+                  <h3 class="program-content-title">برنامج الصغار</h3>
+                  <p class="program-content-description">
+                    يركز برنامج الصغار على تنمية مهارات الأطفال اللغوية
+                    والاجتماعية والمعرفية من خلال مجموعة متنوعة من الأنشطة
+                    التفاعلية. يشجع البرنامج على الاستقلالية وحل المشكلات
+                    والتواصل الفعال باللغتين العربية والإنجليزية.
+                  </p>
+                </div>
+
+                <div class="program-features">
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>مهارات ما قبل القراءة</h4>
+                      <p>تمييز الأصوات والحروف والتعرف على القصص والكتب.</p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-music"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>مهارات الرياضيات</h4>
+                      <p>
+                        تعريف بالأرقام والأشكال والمفاهيم الرياضية الأساسية.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-hands"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>فنون إبداعية</h4>
+                      <p>أنشطة فنية يدوية متنوعة لتعزيز التعبير الإبداعي.</p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>استكشاف العالم</h4>
+                      <p>
+                        أنشطة علمية بسيطة ورحلات استكشافية تعريفية بالبيئة
+                        المحيطة.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-image">
+                <img src="./images/junior.jpg" alt="برنامج الصغار" />
+              </div>
+            </div>
+          </div>
+
+          <div class="program-content" id="preschool">
+            <div class="program-content-inner">
+              <div class="program-content-info">
+                <div class="program-content-header">
+                  <div class="program-age">الفئة العمرية: 3 - 4 سنة</div>
+                  <h3 class="program-content-title">برنامج التمهيدي</h3>
+                  <p class="program-content-description">
+                    برنامج التمهيدي يعد الأطفال للانتقال إلى المدرسة من خلال
+                    منهج متكامل يجمع بين اللعب والتعلم. يركز البرنامج على تطوير
+                    المهارات الأكاديمية والاجتماعية والشخصية اللازمة للنجاح في
+                    المرحلة التالية.
+                  </p>
+                </div>
+
+                <div class="program-features">
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>القراءة والكتابة</h4>
+                      <p>
+                        تمارين القراءة والكتابة باللغتين العربية والإنجليزية.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-music"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>العلوم</h4>
+                      <p>
+                        تجارب علمية بسيطة واستكشاف الظواهر الطبيعية والبيئة
+                        المحيطة.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-hands"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>الرياضيات</h4>
+                      <p>
+                        العد والجمع والطرح البسيط والأشكال والأنماط الرياضية.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="program-feature">
+                    <div class="program-feature-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="program-feature-text">
+                      <h4>المهارات الحياتية</h4>
+                      <p>
+                        تعزيز الاستقلالية والثقة بالنفس والمسؤولية والتعاون مع
+                        الآخرين.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-image">
+                <img src="./images/preschool.jpg" alt="برنامج التمهيدي" />
+              </div>
+            </div>
+          </div>
+
+          <div class="program-cta fade-in">
+            <a href="#contact" class="btn btn-primary">سجل طفلك الآن</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branches Section -->
+    <!-- Branch Cards Section - Clean Layout Without Map -->
+    <section class="branches-section" id="branches">
+      <div class="bg-shape branches-bg-shape-1 shape-yellow"></div>
+      <div class="bg-shape branches-bg-shape-2 shape-blue"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle fade-in">افرعنا</div>
+          <h2 class="section-title fade-in delay-1">
+            فروعنا <span>في مختلف المناطق</span>
+          </h2>
+          <p class="section-description fade-in delay-2">
+            تتواجد حضانة التكامل في عدة مواقع استراتيجية لتكون قريبة منكم أينما
+            كنتم
+          </p>
+        </div>
+
+        <!-- Branch Filter Tabs -->
+        <div class="branch-filter fade-in delay-2">
+          <button class="filter-btn active" data-filter="all">
+            جميع الفروع
+          </button>
+          <button class="filter-btn" data-filter="sabahsalem">
+            منطقة صباح السالم
+          </button>
+          <button class="filter-btn" data-filter="mubarakkabeer">
+            منطقة مبارك الكبير
+          </button>
+        </div>
+
+        <!-- Branch Cards Grid -->
+        <div class="branch-cards-grid fade-in delay-3">
+          <!-- Sabah Salem Branch 9 -->
+          <div class="branch-card" data-area="sabahsalem">
+            <div
+              class="branch-card-header"
+              style="background-color: var(--primary-blue)"
+            >
+              <div class="branch-status">
+                <span class="status-indicator"></span>
+                مفتوح الآن
+              </div>
+              <h3 class="branch-name">فرع صباح السالم قطعة ٩</h3>
+              <div class="branch-area">منطقة صباح السالم</div>
+            </div>
+
+            <div class="branch-card-body">
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>العنوان</h4>
+                  <p>شارع الرئيسي، بجانب مركز الرعاية الصحية</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>رقم الهاتف</h4>
+                  <p>+965 1234 5678</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h4>ساعات العمل</h4>
+                  <p>من الأحد إلى الخميس: 7:00 ص - 3:00 م</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div class="info-content">
+                  <h4>الفئات العمرية</h4>
+                  <p>من 3 أشهر إلى 4 سنوات</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="branch-card-footer">
+              <a
+                href="#contact"
+                class="card-btn primary-btn"
+                style="background-color: var(--primary-blue)"
+              >
+                <i class="fas fa-user-plus"></i>
+                سجل طفلك الآن
+              </a>
+              <div class="secondary-actions">
+                <a href="tel:+9651234567890" class="action-btn call-btn">
+                  <i class="fas fa-phone-alt"></i>
+                </a>
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  class="action-btn directions-btn"
+                >
+                  <i class="fas fa-directions"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sabah Salem Branch 11 -->
+          <div class="branch-card" data-area="sabahsalem">
+            <div
+              class="branch-card-header"
+              style="background-color: var(--primary-orange)"
+            >
+              <div class="branch-status">
+                <span class="status-indicator"></span>
+                مفتوح الآن
+              </div>
+              <h3 class="branch-name">فرع صباح السالم قطعة ١١</h3>
+              <div class="branch-area">منطقة صباح السالم</div>
+            </div>
+
+            <div class="branch-card-body">
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>العنوان</h4>
+                  <p>بالقرب من مجمع التسوق الرئيسي</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>رقم الهاتف</h4>
+                  <p>+965 2345 6789</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h4>ساعات العمل</h4>
+                  <p>من الأحد إلى الخميس: 7:00 ص - 3:00 م</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div class="info-content">
+                  <h4>الفئات العمرية</h4>
+                  <p>من 3 أشهر إلى 4 سنوات</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="branch-card-footer">
+              <a
+                href="#contact"
+                class="card-btn primary-btn"
+                style="background-color: var(--primary-orange)"
+              >
+                <i class="fas fa-user-plus"></i>
+                سجل طفلك الآن
+              </a>
+              <div class="secondary-actions">
+                <a href="tel:+9652345678" class="action-btn call-btn">
+                  <i class="fas fa-phone-alt"></i>
+                </a>
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  class="action-btn directions-btn"
+                >
+                  <i class="fas fa-directions"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mubarak Al-Kabeer Branch -->
+          <div class="branch-card" data-area="mubarakkabeer">
+            <div
+              class="branch-card-header"
+              style="background-color: var(--accent-green)"
+            >
+              <div class="branch-status">
+                <span class="status-indicator"></span>
+                مفتوح الآن
+              </div>
+              <h3 class="branch-name">فرع مبارك الكبير</h3>
+              <div class="branch-area">منطقة مبارك الكبير</div>
+            </div>
+
+            <div class="branch-card-body">
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>العنوان</h4>
+                  <p>شارع الرئيسي، مقابل الحديقة العامة</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>رقم الهاتف</h4>
+                  <p>+965 3456 7890</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h4>ساعات العمل</h4>
+                  <p>من الأحد إلى الخميس: 7:00 ص - 3:00 م</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div class="info-content">
+                  <h4>الفئات العمرية</h4>
+                  <p>من 3 أشهر إلى 4 سنوات</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="branch-card-footer">
+              <a
+                href="#contact"
+                class="card-btn primary-btn"
+                style="background-color: var(--accent-green)"
+              >
+                <i class="fas fa-user-plus"></i>
+                سجل طفلك الآن
+              </a>
+              <div class="secondary-actions">
+                <a href="tel:+9653456789" class="action-btn call-btn">
+                  <i class="fas fa-phone-alt"></i>
+                </a>
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  class="action-btn directions-btn"
+                >
+                  <i class="fas fa-directions"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Qusour Branch -->
+          <div class="branch-card" data-area="mubarakkabeer">
+            <div
+              class="branch-card-header"
+              style="background-color: var(--accent-sky)"
+            >
+              <div class="branch-status">
+                <span class="status-indicator"></span>
+                مفتوح الآن
+              </div>
+              <h3 class="branch-name">فرع القصور</h3>
+              <div class="branch-area">منطقة مبارك الكبير</div>
+            </div>
+
+            <div class="branch-card-body">
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>العنوان</h4>
+                  <p>بالقرب من المركز التجاري، بجانب المسجد الكبير</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>رقم الهاتف</h4>
+                  <p>+965 4567 8901</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-content">
+                  <h4>ساعات العمل</h4>
+                  <p>من الأحد إلى الخميس: 7:00 ص - 3:00 م</p>
+                </div>
+              </div>
+
+              <div class="branch-info-item">
+                <div class="info-icon">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div class="info-content">
+                  <h4>الفئات العمرية</h4>
+                  <p>من 3 أشهر إلى 4 سنوات</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="branch-card-footer">
+              <a
+                href="#contact"
+                class="card-btn primary-btn"
+                style="background-color: var(--accent-sky)"
+              >
+                <i class="fas fa-user-plus"></i>
+                سجل طفلك الآن
+              </a>
+              <div class="secondary-actions">
+                <a href="tel:+9654567890" class="action-btn call-btn">
+                  <i class="fas fa-phone-alt"></i>
+                </a>
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  class="action-btn directions-btn"
+                >
+                  <i class="fas fa-directions"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming Soon Branch -->
+        <div class="coming-soon-container fade-in delay-4">
+          <div class="coming-soon-card">
+            <div class="coming-soon-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3>فرع جديد قريباً</h3>
+            <p>
+              نعمل على افتتاح فرع جديد في منطقة الفروانية. ترقبوا المزيد من
+              التفاصيل قريباً!
+            </p>
+            <a href="#contact" class="coming-soon-btn">
+              <i class="fas fa-bell"></i>
+              أعلمني عند الافتتاح
+            </a>
+          </div>
+        </div>
+
+        <!-- Branch CTA Section -->
+        <div class="branches-cta fade-in delay-5">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-user-plus btn-icon"></i>
+            سجل طفلك الآن
+          </a>
+          <a href="tel:+96512345678" class="btn btn-outline">
+            <i class="fas fa-phone-alt btn-icon"></i>
+            اتصل بالمقر الرئيسي
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Branches Section - Card Layout */
+      .branches-section {
+        position: relative;
+        padding: 100px 0;
+        background-color: var(--white);
+      }
+
+      .branches-bg-shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+        right: -150px;
+      }
+
+      .branches-bg-shape-2 {
+        width: 350px;
+        height: 350px;
+        bottom: -150px;
+        left: -150px;
+      }
+
+      /* Branch Filters */
+      .branch-filter {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 10px 25px;
+        border: none;
+        background-color: var(--light-gray);
+        color: var(--dark-gray);
+        border-radius: var(--radius-full);
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover {
+        transform: translateY(-3px);
+        background-color: var(--medium-gray);
+      }
+
+      .filter-btn.active {
+        background-color: var(--primary-blue);
+        color: var(--white);
+        box-shadow: var(--shadow-md);
+      }
+
+      /* Branch Cards Grid */
+      .branch-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      /* Branch Card */
+      .branch-card {
+        background-color: var(--white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .branch-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Card Header */
+      .branch-card-header {
+        color: var(--white);
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .branch-card-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="50" height="50" fill="rgba(255,255,255,0.1)"/><rect x="50" y="50" width="50" height="50" fill="rgba(255,255,255,0.1)"/></svg>');
+        background-size: 20px 20px;
+        opacity: 0.3;
+      }
+
+      .branch-status {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 12px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius-full);
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+      }
+
+      .status-indicator {
+        width: 8px;
+        height: 8px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        margin-left: 8px;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 5px rgba(76, 175, 80, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+        }
+      }
+
+      .branch-name {
+        font-size: 1.5rem;
+        margin: 0 0 5px 0;
+        position: relative;
+      }
+
+      .branch-area {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      /* Card Body */
+      .branch-card-body {
+        padding: 25px;
+        flex-grow: 1;
+        background-color: var(--white);
+      }
+
+      .branch-info-item {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .branch-info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--light-gray);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .branch-info-item:hover .info-icon {
+        transform: scale(1.1);
+      }
+
+      .info-icon i {
+        font-size: 1.1rem;
+        color: var(--primary-blue);
+      }
+
+      .info-content h4 {
+        margin: 0 0 5px 0;
+        font-size: 0.95rem;
+        color: var(--primary-blue);
+      }
+
+      .info-content p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--dark-gray);
+      }
+
+      /* Card Footer */
+      .branch-card-footer {
+        padding: 20px 25px;
+        background-color: var(--light-gray);
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .card-btn {
+        padding: 10px 15px;
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .primary-btn {
+        flex: 1;
+        color: var(--white);
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .secondary-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .action-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark-gray);
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .action-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .call-btn:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .directions-btn:hover {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      /* Coming Soon Section */
+      .coming-soon-container {
+        margin-bottom: 50px;
+      }
+
+      .coming-soon-card {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: var(--white);
+        border: 2px dashed var(--medium-gray);
+        border-radius: var(--radius-lg);
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .coming-soon-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .coming-soon-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--light-gray);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .coming-soon-icon i {
+        font-size: 2rem;
+        color: var(--primary-blue);
+      }
+
+      .coming-soon-card h3 {
+        color: var(--primary-blue);
+        margin-bottom: 10px;
+      }
+
+      .coming-soon-card p {
+        color: var(--dark-gray);
+        margin-bottom: 20px;
+      }
+
+      .coming-soon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background-color: var(--primary-orange);
+        color: white;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .coming-soon-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        background-color: var(--primary-orange-dark);
+      }
+
+      /* CTA Section */
+      .branches-cta {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .branch-cards-grid {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .branch-cards-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+          margin: 0 auto 50px;
+        }
+
+        .filter-btn {
+          padding: 8px 15px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .branch-card-header {
+          padding: 20px;
+        }
+
+        .branch-card-body,
+        .branch-card-footer {
+          padding: 15px 20px;
+        }
+
+        .branch-name {
+          font-size: 1.3rem;
+        }
+
+        .branch-status {
+          font-size: 0.8rem;
+          padding: 4px 10px;
+        }
+
+        .info-icon {
+          width: 35px;
+          height: 35px;
+        }
+
+        .info-content h4 {
+          font-size: 0.9rem;
+        }
+
+        .info-content p {
+          font-size: 0.85rem;
+        }
+
+        .branches-cta {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+
+    <script>
+      // Branch cards filtering script
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const branchCards = document.querySelectorAll(".branch-card");
+
+        // Filter functionality
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Remove active class from all buttons
+            filterBtns.forEach((b) => {
+              b.classList.remove("active");
+            });
+
+            // Add active class to clicked button
+            btn.classList.add("active");
+
+            // Get filter value
+            const filterValue = btn.getAttribute("data-filter");
+
+            // Show/hide cards based on filter
+            branchCards.forEach((card) => {
+              if (filterValue === "all") {
+                card.style.display = "flex";
+                // Add animation
+                setTimeout(() => {
+                  card.style.opacity = "1";
+                  card.style.transform = "translateY(0)";
+                }, 100);
+              } else if (card.getAttribute("data-area") === filterValue) {
+                card.style.display = "flex";
+                // Add animation
+                setTimeout(() => {
+                  card.style.opacity = "1";
+                  card.style.transform = "translateY(0)";
+                }, 100);
+              } else {
+                card.style.opacity = "0";
+                card.style.transform = "translateY(20px)";
+                setTimeout(() => {
+                  card.style.display = "none";
+                }, 300);
+              }
+            });
+          });
+        });
+
+        // Hover effects for branch cards
+        branchCards.forEach((card) => {
+          const header = card.querySelector(".branch-card-header");
+          const primaryBtn = card.querySelector(".primary-btn");
+
+          // Match button color to header on hover
+          card.addEventListener("mouseenter", () => {
+            const headerColor = window.getComputedStyle(header).backgroundColor;
+          });
+        });
+
+        // Add animation for branch status indicators
+        const statusIndicators = document.querySelectorAll(".status-indicator");
+        setInterval(() => {
+          statusIndicators.forEach((indicator) => {
+            indicator.style.opacity = "0.5";
+            setTimeout(() => {
+              indicator.style.opacity = "1";
+            }, 500);
+          });
+        }, 2000);
+      });
+    </script>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="bg-shape testimonials-bg-shape-1 shape-yellow"></div>
+      <div class="bg-shape testimonials-bg-shape-2 shape-blue"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle fade-in">آراء أولياء الأمور</div>
+          <h2 class="section-title fade-in delay-1">
+            ماذا يقول <span>عملاؤنا</span> عنا
+          </h2>
+          <p class="section-description fade-in delay-2">
+            استمع إلى تجارب الأهالي مع حضانة التكامل
+          </p>
+        </div>
+
+        <div class="testimonials-wrapper">
+          <div class="testimonials-container fade-in delay-3">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                لقد كان قرار تسجيل ابنتي في حضانة التكامل من أفضل القرارات التي
+                اتخذتها. تطورت مهاراتها اللغوية بشكل ملحوظ، وأصبحت أكثر ثقة
+                واستقلالية. الفريق التعليمي متميز ويهتم حقًا بكل طفل. أشعر
+                بالاطمئنان التام عندما تكون ابنتي في الحضانة، وهي متحمسة للذهاب
+                كل صباح.
+              </div>
+              <div class="testimonial-author">
+                <div class="testimonial-author-avatar">
+                  <img src="/api/placeholder/60/60" alt="صورة ولي أمر" />
+                </div>
+                <div class="testimonial-author-info">
+                  <h4>منى العبدالله</h4>
+                  <p>والدة سارة</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-controls">
+              <div
+                class="testimonial-nav testimonial-prev"
+                id="testimonialPrev"
+              >
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div
+                class="testimonial-nav testimonial-next"
+                id="testimonialNext"
+              >
+                <i class="fas fa-chevron-left"></i>
+              </div>
+            </div>
+
+            <div class="testimonial-dots">
+              <div class="testimonial-dot active" data-index="0"></div>
+              <div class="testimonial-dot" data-index="1"></div>
+              <div class="testimonial-dot" data-index="2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="bg-shape contact-bg-shape-1 shape-blue"></div>
+      <div class="bg-shape contact-bg-shape-2 shape-orange"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle fade-in">اتصل بنا</div>
+          <h2 class="section-title fade-in delay-1">
+            نحن هنا <span>لمساعدتك</span>
+          </h2>
+          <p class="section-description fade-in delay-2">
+            تواصل معنا للاستفسار أو تسجيل طفلك في إحدى برامجنا
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-form-wrapper fade-in-left delay-3">
+            <h3 class="contact-form-title">سجل طفلك الآن</h3>
+            <form id="registrationForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="parentName" class="form-label"
+                    >اسم ولي الأمر</label
+                  >
+                  <input
+                    type="text"
+                    id="parentName"
+                    class="form-control"
+                    placeholder="الاسم الكامل"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">رقم الهاتف</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="form-control"
+                    placeholder="05xxxxxxxx"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label"
+                    >البريد الإلكتروني</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="example@email.com"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="childName" class="form-label">اسم الطفل</label>
+                  <input
+                    type="text"
+                    id="childName"
+                    class="form-control"
+                    placeholder="اسم الطفل"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="childAge" class="form-label">عمر الطفل</label>
+                  <input
+                    type="text"
+                    id="childAge"
+                    class="form-control"
+                    placeholder="عمر الطفل"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="branch" class="form-label">الفرع المفضل</label>
+                  <select id="branch" class="form-control form-select" required>
+                    <option value="">اختر الفرع</option>
+                    <option value="sabahsalem9">صباح السالم قطعة ٩</option>
+                    <option value="sabahsalem11">صباح السالم قطعة ١١</option>
+                    <option value="mubarakkabeer">مبارك الكبير</option>
+                    <option value="qusour">القصور</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="program" class="form-label"
+                    >البرنامج المطلوب</label
+                  >
+                  <select
+                    id="program"
+                    class="form-control form-select"
+                    required
+                  >
+                    <option value="">اختر البرنامج</option>
+                    <option value="infants">برنامج الرضع (3-12 شهر)</option>
+                    <option value="toddlers">برنامج الدارجين (1-2 سنة)</option>
+                    <option value="juniors">برنامج الصغار (2-3 سنوات)</option>
+                    <option value="preschool">
+                      برنامج التمهيدي (3-4 سنوات)
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group full">
+                  <label for="message" class="form-label">ملاحظات إضافية</label>
+                  <textarea
+                    id="message"
+                    class="form-control"
+                    placeholder="أي معلومات إضافية ترغب في إخبارنا بها"
+                  ></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="form-submit">إرسال الطلب</button>
+            </form>
+          </div>
+
+          <div class="contact-info fade-in-right delay-4">
+            <div class="contact-info-pattern"></div>
+            <h3 class="contact-info-title">تواصل معنا</h3>
+            <p class="contact-info-text">
+              نحن سعداء بالإجابة على استفساراتك وتقديم المزيد من المعلومات عن
+              برامجنا وخدماتنا. يمكنك التواصل معنا عبر إحدى الطرق التالية:
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-method-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-method-content">
+                  <h4>المقر الرئيسي</h4>
+                  <p>صباح السالم، قطعة ٩، شارع الرئيسي</p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-method-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-method-content">
+                  <h4>الهاتف</h4>
+                  <p><a href="tel:+9661234567890">+965 1234 5678</a></p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-method-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-method-content">
+                  <h4>البريد الإلكتروني</h4>
+                  <p>
+                    <a href="mailto:info@altakamul.com">info@altakamul.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-method-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-method-content">
+                  <h4>ساعات العمل</h4>
+                  <p>الأحد - الخميس: 7:00 صباحاً - 3:00 مساءً</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-social">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-container fade-in delay-5">
+          <img src="/api/placeholder/1200/400" alt="موقع الحضانة" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="bg-shape footer-bg-shape-1shape-blue"></div>
+      <div class="bg-shape footer-bg-shape-2 shape-orange"></div>
+
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">
+              <img src="/api/placeholder/150/60" alt="حضانة التكامل" />
+            </div>
+            <p class="footer-description">
+              حضانة التكامل ثنائية اللغة توفر بيئة تعليمية متميزة تساعد الأطفال
+              على اكتشاف قدراتهم وتطوير مهاراتهم في مرحلة الطفولة المبكرة.
+            </p>
+            <div class="footer-newsletter">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="البريد الإلكتروني للاشتراك"
+              />
+              <button class="newsletter-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="footer-links-section">
+            <h3 class="footer-title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li class="footer-link">
+                <a href="#hero"><i class="fas fa-chevron-left"></i> الرئيسية</a>
+              </li>
+              <li class="footer-link">
+                <a href="#features"
+                  ><i class="fas fa-chevron-left"></i> مميزاتنا</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#programs"
+                  ><i class="fas fa-chevron-left"></i> البرامج</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#branches"
+                  ><i class="fas fa-chevron-left"></i> افرعنا</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#testimonials"
+                  ><i class="fas fa-chevron-left"></i> آراء الأهالي</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#contact"
+                  ><i class="fas fa-chevron-left"></i> اتصل بنا</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-links-section">
+            <h3 class="footer-title">فروعنا</h3>
+            <ul class="footer-links">
+              <li class="footer-link">
+                <a href="#branches"
+                  ><i class="fas fa-chevron-left"></i> صباح السالم قطعة ٩</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#branches"
+                  ><i class="fas fa-chevron-left"></i> صباح السالم قطعة ١١</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#branches"
+                  ><i class="fas fa-chevron-left"></i> مبارك الكبير</a
+                >
+              </li>
+              <li class="footer-link">
+                <a href="#branches"
+                  ><i class="fas fa-chevron-left"></i> القصور</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-contact-section">
+            <h3 class="footer-title">اتصل بنا</h3>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="footer-contact-text">
+                صباح السالم، قطعة ٩، شارع الرئيسي
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="footer-contact-text">
+                <a href="tel:+9651234567890">+965 1234 5678</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="footer-contact-text">
+                <a href="mailto:info@altakamul.com">info@altakamul.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            جميع الحقوق محفوظة &copy; 2025 - حضانة التكامل ثنائية اللغة
+          </div>
+          <div class="footer-social">
+            <a href="#" class="footer-social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="footer-social-link"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="footer-social-link"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="footer-social-link"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Chat Bubble -->
+    <div class="chat-bubble" id="chatBubble">
+      <div class="chat-bubble-text">هل لديك استفسار؟ تحدث معنا!</div>
+      <div class="chat-bubble-icon">
+        <i class="fas fa-comment-dots"></i>
+      </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+      <div class="modal-content">
+        <div class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </div>
+        <img src="" alt="" class="modal-image" id="modalImage" />
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // DOM Elements
+      const loader = document.getElementById("loader");
+      const loaderBar = document.getElementById("loaderBar");
+      const header = document.getElementById("header");
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
+      const scrollTop = document.getElementById("scrollTop");
+      const chatBubble = document.getElementById("chatBubble");
+      const heroScroll = document.getElementById("heroScroll");
+      const programTabs = document.querySelectorAll(".program-tab");
+      const programContents = document.querySelectorAll(".program-content");
+      const testimonialPrev = document.getElementById("testimonialPrev");
+      const testimonialNext = document.getElementById("testimonialNext");
+      const testimonialDots = document.querySelectorAll(".testimonial-dot");
+      const registrationForm = document.getElementById("registrationForm");
+      const imageModal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const modalClose = document.getElementById("modalClose");
+
+      // Loader Animation
+      window.addEventListener("load", () => {
+        let width = 0;
+        const interval = setInterval(() => {
+          width += 5;
+          loaderBar.style.width = width + "%";
+
+          if (width >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+              loader.style.opacity = "0";
+              setTimeout(() => {
+                loader.style.display = "none";
+                animateElements();
+              }, 500);
+            }, 500);
+          }
+        }, 50);
+
+        // Show chat bubble after a delay
+        setTimeout(() => {
+          chatBubble.classList.add("active");
+        }, 4000);
+      });
+
+      // Mobile Menu Toggle
+      mobileToggle.addEventListener("click", () => {
+        mobileToggle.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Animate elements on scroll
+      function animateElements() {
+        const fadeElements = document.querySelectorAll(
+          ".fade-in, .fade-in-left, .fade-in-right"
+        );
+        fadeElements.forEach((element) => {
+          if (isElementInViewport(element)) {
+            element.classList.add("active");
+          }
+        });
+      }
+
+      function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top <=
+          (window.innerHeight || document.documentElement.clientHeight) * 0.85
+        );
+      }
+
+      // Scroll events
+      window.addEventListener("scroll", () => {
+        // Sticky header
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        // Show/hide scroll to top button
+        if (window.scrollY > 300) {
+          scrollTop.classList.add("active");
+        } else {
+          scrollTop.classList.remove("active");
+        }
+
+        // Animate elements on scroll
+        animateElements();
+      });
+
+      // Scroll to Top
+      scrollTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Hero Scroll button
+      heroScroll.addEventListener("click", () => {
+        const featuresSection = document.getElementById("features");
+        featuresSection.scrollIntoView({ behavior: "smooth" });
+      });
+
+      // Smooth scrolling for all links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            // Close mobile menu if open
+            if (navMenu.classList.contains("active")) {
+              mobileToggle.classList.remove("active");
+              navMenu.classList.remove("active");
+            }
+
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Program Tabs
+      programTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const programId = tab.getAttribute("data-program");
+
+          // Remove active class from all tabs and contents
+          programTabs.forEach((tab) => tab.classList.remove("active"));
+          programContents.forEach((content) =>
+            content.classList.remove("active")
+          );
+
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add("active");
+          document.getElementById(programId).classList.add("active");
+        });
+      });
+
+      // Testimonials slider
+      let currentTestimonial = 0;
+      const testimonials = [
+        {
+          quote:
+            "لقد كان قرار تسجيل ابنتي في حضانة التكامل من أفضل القرارات التي اتخذتها. تطورت مهاراتها اللغوية بشكل ملحوظ، وأصبحت أكثر ثقة واستقلالية. الفريق التعليمي متميز ويهتم حقًا بكل طفل.",
+          name: "منى العبدالله",
+          role: "والدة سارة",
+          avatar: "/api/placeholder/60/60",
+        },
+        {
+          quote:
+            "أبهرني المستوى المتقدم الذي وصل إليه ابني في اللغتين العربية والإنجليزية. البيئة التعليمية في حضانة التكامل ممتازة، وطريقة تعاملهم مع الأطفال رائعة. التواصل المستمر مع أولياء الأمور والتقارير الدورية عن تطور الطفل من الأمور التي أقدرها بشدة.",
+          name: "خالد السالم",
+          role: "والد يوسف",
+          avatar: "/api/placeholder/60/60",
+        },
+        {
+          quote:
+            "الأنشطة المتنوعة والبرامج المبتكرة التي تقدمها حضانة التكامل ساعدت طفلي على اكتشاف هواياته وتطوير مهاراته. الكادر التعليمي محترف ومتفاني، والمرافق مجهزة بأحدث التقنيات.",
+          name: "نورة الفهد",
+          role: "والدة عمر",
+          avatar: "/api/placeholder/60/60",
+        },
+      ];
+
+      function updateTestimonial() {
+        const testimonialCard = document.querySelector(".testimonial-card");
+        const testimonialQuote =
+          testimonialCard.querySelector(".testimonial-quote");
+        const testimonialAuthorName = testimonialCard.querySelector(
+          ".testimonial-author-info h4"
+        );
+        const testimonialAuthorRole = testimonialCard.querySelector(
+          ".testimonial-author-info p"
+        );
+        const testimonialAuthorAvatar = testimonialCard.querySelector(
+          ".testimonial-author-avatar img"
+        );
+
+        testimonialCard.style.opacity = "0";
+        testimonialCard.style.transform = "rotate(-5deg) translateY(20px)";
+
+        setTimeout(() => {
+          testimonialQuote.textContent = testimonials[currentTestimonial].quote;
+          testimonialAuthorName.textContent =
+            testimonials[currentTestimonial].name;
+          testimonialAuthorRole.textContent =
+            testimonials[currentTestimonial].role;
+          testimonialAuthorAvatar.src = testimonials[currentTestimonial].avatar;
+
+          testimonialDots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentTestimonial);
+          });
+
+          testimonialCard.style.opacity = "1";
+          testimonialCard.style.transform = "rotate(-1deg) translateY(0)";
+        }, 300);
+      }
+
+      testimonialPrev.addEventListener("click", () => {
+        currentTestimonial =
+          (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial();
+      });
+
+      testimonialNext.addEventListener("click", () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonial();
+      });
+
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentTestimonial = index;
+          updateTestimonial();
+        });
+      });
+
+      // Auto-advance testimonials
+      setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonial();
+      }, 8000);
+
+      // Registration Form
+      registrationForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // In a real implementation, you would send the form data to the server
+        alert("تم إرسال طلب التسجيل بنجاح! سنتواصل معك قريباً.");
+        this.reset();
+      });
+
+      // Chat Bubble Click
+      chatBubble.addEventListener("click", () => {
+        alert(
+          "يمكنك التواصل معنا عبر الهاتف: +965 1234 5678 أو البريد الإلكتروني: info@altakamul.com"
+        );
+      });
+
+      // Modal functions
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      if (galleryItems.length > 0) {
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            const img = item.querySelector("img");
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            imageModal.classList.add("active");
+          });
+        });
+      }
+
+      modalClose.addEventListener("click", () => {
+        imageModal.classList.remove("active");
+      });
+
+      imageModal.addEventListener("click", (e) => {
+        if (e.target === imageModal) {
+          imageModal.classList.remove("active");
+        }
+      });
+
+      // Call animateElements once on load to animate initial viewport elements
+      setTimeout(animateElements, 100);
+    </script>
+  </body>
+</html>
